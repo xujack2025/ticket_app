@@ -8,6 +8,9 @@ class CustomTextStyleThird extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(text, style: AppStyle.headLineStyle3.copyWith(color: Colors.white));
+    return Text(
+      text,
+      style: AppStyle.headLineStyle3.copyWith(color: Colors.white),
+    );
   }
 }

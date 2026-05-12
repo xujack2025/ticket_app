@@ -41,7 +41,9 @@ class _HomePageState extends State<HomePage> {
                       height: 50,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        image: DecorationImage(image: NetworkImage(AppMedia.logo)),
+                        image: DecorationImage(
+                          image: NetworkImage(AppMedia.logo),
+                        ),
                       ),
                     ),
                   ],
@@ -72,7 +74,7 @@ class _HomePageState extends State<HomePage> {
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
-                    children: ticketList.map((singleTicket) {
+                    children: ticketList.take(2).map((singleTicket) {
                       return TicketView(ticket: singleTicket);
                     }).toList(),
                   ),

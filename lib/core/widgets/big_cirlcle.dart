@@ -20,7 +20,9 @@ class BigCirlcle extends StatelessWidget {
                 child: DecoratedBox(
                   decoration: BoxDecoration(
                     color: AppStyle.bgColor,
-                    borderRadius: BorderRadius.only(topRight: Radius.circular(10)),
+                    borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(10),
+                    ),
                   ),
                 ),
               ),
@@ -30,7 +32,9 @@ class BigCirlcle extends StatelessWidget {
                 child: DecoratedBox(
                   decoration: BoxDecoration(
                     color: AppStyle.bgColor,
-                    borderRadius: BorderRadius.only(topLeft: Radius.circular(10)),
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(10),
+                    ),
                   ),
                 ),
               ),
@@ -52,7 +56,9 @@ class BigCirlcle extends StatelessWidget {
                 child: DecoratedBox(
                   decoration: BoxDecoration(
                     color: AppStyle.bgColor,
-                    borderRadius: BorderRadius.only(bottomRight: Radius.circular(10)),
+                    borderRadius: BorderRadius.only(
+                      bottomRight: Radius.circular(10),
+                    ),
                   ),
                 ),
               ),
@@ -63,7 +69,9 @@ class BigCirlcle extends StatelessWidget {
                 child: DecoratedBox(
                   decoration: BoxDecoration(
                     color: AppStyle.bgColor,
-                    borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10)),
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(10),
+                    ),
                   ),
                 ),
               ),

@@ -71,15 +71,17 @@ class TicketView extends StatelessWidget {
                     children: [
                       SizedBox(
                         width: 100,
-                        child: CustomTextStyleFourth(text: "New-York"),
+                        child: CustomTextStyleFourth(
+                          text: ticket["from"]["name"],
+                        ),
                       ),
                       Expanded(child: Container()),
-                      CustomTextStyleFourth(text: "8H 30M"),
+                      CustomTextStyleFourth(text: ticket["flying_time"]),
                       Expanded(child: Container()),
                       SizedBox(
                         width: 100,
                         child: CustomTextStyleFourth(
-                          text: "London",
+                          text: ticket["to"]["name"],
                           align: TextAlign.end,
                         ),
                       ),
@@ -109,17 +111,17 @@ class TicketView extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       AppColumnTextLayout(
-                        topText: '1 MAY',
+                        topText: ticket["date"],
                         bottomText: 'DATE',
                         alignment: CrossAxisAlignment.start,
                       ),
                       AppColumnTextLayout(
-                        topText: '08:00 AM',
+                        topText: ticket["departure_time"],
                         bottomText: 'Departure Time',
                         alignment: CrossAxisAlignment.center,
                       ),
                       AppColumnTextLayout(
-                        topText: '23D',
+                        topText: ticket["seat"],
                         bottomText: 'Seats',
                         alignment: CrossAxisAlignment.end,
                       ),
