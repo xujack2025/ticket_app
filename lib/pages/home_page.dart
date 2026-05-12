@@ -1,10 +1,12 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:ticket_app/core/res/media.dart';
+import 'package:ticket_app/core/res/app_media.dart';
 import 'package:ticket_app/core/res/styles/app_style.dart';
 import 'package:ticket_app/core/utils/all_json.dart';
+import 'package:ticket_app/core/utils/app_routes.dart';
 import 'package:ticket_app/core/widgets/app_double_text.dart';
 import 'package:ticket_app/core/widgets/ticket_view.dart';
+import 'package:ticket_app/pages/hotel.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -66,7 +68,11 @@ class _HomePageState extends State<HomePage> {
                 ),
 
                 const SizedBox(height: 40),
-                AppDoubleText(title: 'Upcoming Flights', linkText: 'View all'),
+                AppDoubleText(
+                  title: 'Upcoming Flights',
+                  linkText: 'View all',
+                  function: () => Navigator.pushNamed(context, AppRoutes.allTicketsPage),
+                ),
 
                 const SizedBox(height: 20),
                 SingleChildScrollView(
@@ -74,6 +80,23 @@ class _HomePageState extends State<HomePage> {
                   child: Row(
                     children: ticketList.take(2).map((singleTicket) {
                       return TicketView(ticket: singleTicket);
+                    }).toList(),
+                  ),
+                ),
+
+                const SizedBox(height: 40),
+                AppDoubleText(
+                  title: 'Hotels',
+                  linkText: 'View all',
+                  function: () => Navigator.pushNamed(context, AppRoutes.allHotelsPage),
+                ),
+
+                const SizedBox(height: 20),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: hotelList.take(2).map((singleHotel) {
+                      return HotelView(hotel: singleHotel);
                     }).toList(),
                   ),
                 ),

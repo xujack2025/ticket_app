@@ -2,9 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:ticket_app/core/res/styles/app_style.dart';
 
 class AppDoubleText extends StatelessWidget {
-  const AppDoubleText({super.key, required this.title, required this.linkText});
+  const AppDoubleText({
+    super.key,
+    required this.title,
+    required this.linkText,
+    required this.function,
+  });
   final String title;
   final String linkText;
+  final VoidCallback function;
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +19,7 @@ class AppDoubleText extends StatelessWidget {
       children: [
         Text(title, style: AppStyle.headLineStyle2),
         InkWell(
-          onTap: () => Navigator.pushNamed(context, "/all_tickets_page"),
+          onTap: function,
           child: Text(
             linkText,
             style: AppStyle.textStyle.copyWith(color: AppStyle.primary),

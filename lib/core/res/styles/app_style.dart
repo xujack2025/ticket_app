@@ -6,6 +6,7 @@ class AppStyle {
   static const Color bgColor = Color(0xFFEEEDF2);
   static const Color ticketUpper = Color(0xFF526799);
   static const Color ticketBottom = Color(0xFFF37B67);
+  static const Color khakiColor = Color(0xFFD2BDB6);
 
   static TextStyle textStyle = TextStyle(
     fontSize: 16,
