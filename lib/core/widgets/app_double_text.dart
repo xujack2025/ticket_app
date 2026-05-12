@@ -13,7 +13,7 @@ class AppDoubleText extends StatelessWidget {
       children: [
         Text(title, style: AppStyle.headLineStyle2),
         InkWell(
-          onTap: () {},
+          onTap: () => Navigator.pushNamed(context, "/all_tickets_page"),
           child: Text(
             linkText,
             style: AppStyle.textStyle.copyWith(color: AppStyle.primary),

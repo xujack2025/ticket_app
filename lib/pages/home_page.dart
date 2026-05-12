@@ -41,9 +41,7 @@ class _HomePageState extends State<HomePage> {
                       height: 50,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        image: DecorationImage(
-                          image: NetworkImage(AppMedia.logo),
-                        ),
+                        image: DecorationImage(image: NetworkImage(AppMedia.logo)),
                       ),
                     ),
                   ],

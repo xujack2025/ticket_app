@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:ticket_app/core/res/styles/app_style.dart';
-import 'package:ticket_app/core/utils/all_json.dart';
 import 'package:ticket_app/core/widgets/app_column_text_layout.dart';
 import 'package:ticket_app/core/widgets/app_layoutbuilder_widget.dart';
 import 'package:ticket_app/core/widgets/big_cirlcle.dart';
@@ -10,16 +9,17 @@ import 'package:ticket_app/core/widgets/custom_text_style_third.dart';
 
 class TicketView extends StatelessWidget {
   final Map<String, dynamic> ticket;
-  const TicketView({super.key, required this.ticket});
+  final bool wholeScreen;
+  const TicketView({super.key, required this.ticket, this.wholeScreen = false});
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return SizedBox(
       width: size.width * 0.85,
-      height: 209,
+      height: 190,
       child: Container(
-        margin: EdgeInsets.only(right: 16),
+        margin: EdgeInsets.only(right: wholeScreen == true ? 0 : 16),
         child: Column(
           children: [
             /// Ticket Upper Side
@@ -71,9 +71,7 @@ class TicketView extends StatelessWidget {
                     children: [
                       SizedBox(
                         width: 100,
-                        child: CustomTextStyleFourth(
-                          text: ticket["from"]["name"],
-                        ),
+                        child: CustomTextStyleFourth(text: ticket["from"]["name"]),
                       ),
                       Expanded(child: Container()),
                       CustomTextStyleFourth(text: ticket["flying_time"]),
