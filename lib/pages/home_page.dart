@@ -2,7 +2,9 @@ import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:ticket_app/core/res/media.dart';
 import 'package:ticket_app/core/res/styles/app_style.dart';
-import 'package:ticket_app/core/res/widgets/app_double_text.dart';
+import 'package:ticket_app/core/utils/all_json.dart';
+import 'package:ticket_app/core/widgets/app_double_text.dart';
+import 'package:ticket_app/core/widgets/ticket_view.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -44,6 +46,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ],
                 ),
+
                 const SizedBox(height: 25),
                 Container(
                   padding: EdgeInsets.all(12),
@@ -64,6 +67,16 @@ class _HomePageState extends State<HomePage> {
 
                 const SizedBox(height: 40),
                 AppDoubleText(title: 'Upcoming Flights', linkText: 'View all'),
+
+                const SizedBox(height: 20),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: ticketList.map((singleTicket) {
+                      return TicketView(ticket: singleTicket);
+                    }).toList(),
+                  ),
+                ),
               ],
             ),
           ),
