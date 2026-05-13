@@ -3,82 +3,73 @@ import 'package:ticket_app/core/res/styles/app_style.dart';
 import 'package:ticket_app/core/widgets/app_layoutbuilder_widget.dart';
 
 class BigCirlcle extends StatelessWidget {
-  const BigCirlcle({super.key});
+  final bool? isColor;
+
+  const BigCirlcle({super.key, this.isColor});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Container(
-          color: AppStyle.ticketUpper,
+          color: isColor == null ? AppStyle.ticketUpper : AppStyle.ticketBgColor,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SizedBox(
-                height: 10,
-                width: 10,
-                child: DecoratedBox(
-                  decoration: BoxDecoration(
-                    color: AppStyle.bgColor,
-                    borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(10),
-                    ),
-                  ),
-                ),
+              HalfCircle(
+                side: BorderRadius.only(topRight: Radius.circular(10)),
+                isColor: isColor,
               ),
-              SizedBox(
-                height: 10,
-                width: 10,
-                child: DecoratedBox(
-                  decoration: BoxDecoration(
-                    color: AppStyle.bgColor,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(10),
-                    ),
-                  ),
-                ),
+              HalfCircle(
+                side: BorderRadius.only(topLeft: Radius.circular(10)),
+                isColor: isColor,
               ),
             ],
           ),
         ),
         Container(
           margin: EdgeInsets.symmetric(horizontal: 10),
-          color: AppStyle.ticketUpper,
+          color: isColor == null ? AppStyle.ticketUpper : Colors.grey.shade200,
           child: AppLayoutbuilderWidget(randomDivider: 16, width: 6),
         ),
         Container(
-          color: AppStyle.ticketBottom,
+          color: isColor == null ? AppStyle.ticketBottom : AppStyle.ticketBgColor,
           child: Row(
             children: [
-              SizedBox(
-                height: 10,
-                width: 10,
-                child: DecoratedBox(
-                  decoration: BoxDecoration(
-                    color: AppStyle.bgColor,
-                    borderRadius: BorderRadius.only(
-                      bottomRight: Radius.circular(10),
-                    ),
-                  ),
-                ),
+              HalfCircle(
+                side: BorderRadius.only(bottomRight: Radius.circular(10)),
+                isColor: isColor,
               ),
               Expanded(child: Container()),
-              SizedBox(
-                height: 10,
-                width: 10,
-                child: DecoratedBox(
-                  decoration: BoxDecoration(
-                    color: AppStyle.bgColor,
-                    borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(10),
-                    ),
-                  ),
-                ),
+              HalfCircle(
+                side: BorderRadius.only(bottomLeft: Radius.circular(10)),
+                isColor: isColor,
               ),
             ],
           ),
         ),
       ],
+    );
+  }
+}
+
+class HalfCircle extends StatelessWidget {
+  final BorderRadius side;
+  final bool? isColor;
+
+  const HalfCircle({super.key, this.isColor, required this.side});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 10,
+      width: 10,
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          color: isColor == null ? AppStyle.bgColor : AppStyle.ticketBgColor,
+          borderRadius: side,
+        ),
+      ),
     );
   }
 }
