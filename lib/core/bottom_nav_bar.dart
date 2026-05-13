@@ -1,6 +1,7 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:ticket_app/pages/home_page.dart';
+import 'package:ticket_app/pages/home/home_page.dart';
+import 'package:ticket_app/pages/search/search_page.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -12,12 +13,12 @@ class BottomNavBar extends StatefulWidget {
 class _BottomNavBarState extends State<BottomNavBar> {
   final appScreens = const [
     HomePage(),
-    Center(child: Text("Search")),
+    SearchPage(),
     Center(child: Text("Tickets")),
     Center(child: Text("Profile")),
   ];
 
-  int _selectedIndex = 0;
+  int _selectedIndex = 1;
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;

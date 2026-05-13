@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ticket_app/core/res/styles/app_style.dart';
 import 'package:ticket_app/core/utils/all_json.dart';
 import 'package:ticket_app/core/widgets/ticket_view.dart';
-import 'package:ticket_app/pages/hotel.dart';
+import 'package:ticket_app/pages/home/hotel.dart';
 
 class AllHotelsPage extends StatelessWidget {
   const AllHotelsPage({super.key});

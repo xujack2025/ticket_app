@@ -6,7 +6,7 @@ import 'package:ticket_app/core/utils/all_json.dart';
 import 'package:ticket_app/core/utils/app_routes.dart';
 import 'package:ticket_app/core/widgets/app_double_text.dart';
 import 'package:ticket_app/core/widgets/ticket_view.dart';
-import 'package:ticket_app/pages/hotel.dart';
+import 'package:ticket_app/pages/home/hotel.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
