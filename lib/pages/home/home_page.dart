@@ -5,6 +5,7 @@ import 'package:ticket_app/core/res/styles/app_style.dart';
 import 'package:ticket_app/core/utils/all_json.dart';
 import 'package:ticket_app/core/utils/app_routes.dart';
 import 'package:ticket_app/core/widgets/app_double_text.dart';
+import 'package:ticket_app/core/widgets/heading_text.dart';
 import 'package:ticket_app/core/widgets/ticket_view.dart';
 import 'package:ticket_app/pages/home/hotel.dart';
 
@@ -35,7 +36,7 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         const Text("Good Morning", style: AppStyle.headLineStyle3),
                         const SizedBox(height: 5),
-                        Text("Book Tickets", style: AppStyle.headLineStyle1),
+                        HeadingText(text: "Book Tickets", isColor: true),
                       ],
                     ),
                     Container(
@@ -49,7 +50,7 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
 
-                const SizedBox(height: 25),
+                const SizedBox(height: 24),
                 Container(
                   padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(

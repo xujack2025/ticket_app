@@ -14,6 +14,8 @@ class AppStyle {
   static const Color ticketBgColor = Colors.white;
   static const Color dotColor = Color(0xFF8ACCF7);
   static const Color planeSecondColor = Color(0xFF8ACCF7);
+  static const Color profileBadgeColor = Color(0xFFFEF4F3);
+  static const Color profileTextColor = Color(0xFF526799);
   static const Color red = Colors.red;
   static const Color white = Colors.white;
 
