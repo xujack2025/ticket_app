@@ -27,7 +27,9 @@ class Profile extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: AppStyle.white,
                   borderRadius: BorderRadius.circular(20),
-                  image: const DecorationImage(image: NetworkImage(AppMedia.logo)),
+                  image: const DecorationImage(
+                    image: NetworkImage(AppMedia.logo),
+                  ),
                 ),
               ),
 
@@ -47,7 +49,10 @@ class Profile extends StatelessWidget {
                   ),
                   const SizedBox(height: 8),
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 3),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 3,
+                      vertical: 3,
+                    ),
                     decoration: BoxDecoration(
                       color: AppStyle.profileBadgeColor,
                       borderRadius: BorderRadius.circular(100),
@@ -82,7 +87,10 @@ class Profile extends StatelessWidget {
               Expanded(child: Container()),
               const Text(
                 "Edit",
-                style: TextStyle(color: AppStyle.primary, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                  color: AppStyle.primary,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ],
           ),
@@ -104,7 +112,10 @@ class Profile extends StatelessWidget {
                 ),
               ),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 20),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 25,
+                  vertical: 20,
+                ),
                 child: Row(
                   children: [
                     const CircleAvatar(
@@ -140,7 +151,10 @@ class Profile extends StatelessWidget {
                   padding: const EdgeInsets.all(30),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    border: Border.all(width: 18, color: const Color(0xFF264CD2)),
+                    border: Border.all(
+                      width: 18,
+                      color: const Color(0xFF264CD2),
+                    ),
                   ),
                 ),
               ),

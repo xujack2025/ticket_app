@@ -25,7 +25,10 @@ class SearchPage extends StatelessWidget {
           const SizedBox(height: 20),
           const AppTicketTabs(firstTab: 'All Tickets', secondTab: 'Hotels'),
           const SizedBox(height: 24),
-          const AppTextIcon(icon: Icons.flight_takeoff_rounded, text: 'Departure'),
+          const AppTextIcon(
+            icon: Icons.flight_takeoff_rounded,
+            text: 'Departure',
+          ),
           const SizedBox(height: 20),
           const AppTextIcon(icon: Icons.flight_land_rounded, text: 'Arrival'),
           const SizedBox(height: 24),
@@ -34,7 +37,8 @@ class SearchPage extends StatelessWidget {
           AppDoubleText(
             title: 'Upcoming Flights',
             linkText: 'View all',
-            function: () => Navigator.pushNamed(context, AppRoutes.allTicketsPage),
+            function: () =>
+                Navigator.pushNamed(context, AppRoutes.allTicketsPage),
           ),
           const SizedBox(height: 16),
           const TicketPromotion(),

@@ -10,7 +10,10 @@ class AllHotelsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppStyle.bgColor,
-      appBar: AppBar(title: const Text("All Hotels"), backgroundColor: AppStyle.bgColor),
+      appBar: AppBar(
+        title: const Text("All Hotels"),
+        backgroundColor: AppStyle.bgColor,
+      ),
       body: Container(
         margin: const EdgeInsets.only(left: 6),
         child: Padding(
@@ -90,7 +93,9 @@ class HotelGridView extends StatelessWidget {
               children: [
                 Text(
                   hotel["destination"],
-                  style: AppStyle.headLineStyle3.copyWith(color: AppStyle.khakiColor),
+                  style: AppStyle.headLineStyle3.copyWith(
+                    color: AppStyle.khakiColor,
+                  ),
                 ),
                 const SizedBox(width: 5),
                 Text(

@@ -11,7 +11,10 @@ class AllTicketsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppStyle.bgColor,
-      appBar: AppBar(title: const Text("All Tickets"), backgroundColor: AppStyle.bgColor),
+      appBar: AppBar(
+        title: const Text("All Tickets"),
+        backgroundColor: AppStyle.bgColor,
+      ),
       body: ListView(
         children: [
           SingleChildScrollView(

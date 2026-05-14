@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:ticket_app/controller/toggle_controller.dart';
 import 'package:ticket_app/core/res/styles/app_style.dart';
 import 'package:ticket_app/core/utils/all_json.dart';
 
@@ -59,7 +61,10 @@ class _HotelDetailsPageState extends State<HotelDetailsPage> {
                     bottom: 20,
                     right: 20,
                     child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 8,
+                        vertical: 4,
+                      ),
                       color: Colors.black.withValues(alpha: 0.5),
                       child: Text(
                         hotelList[hotelIndex]["place"],
@@ -85,7 +90,9 @@ class _HotelDetailsPageState extends State<HotelDetailsPage> {
             delegate: SliverChildListDelegate([
               Padding(
                 padding: const EdgeInsets.all(16),
-                child: ExpandedTextWidget(text: hotelList[hotelIndex]["detail"]),
+                child: ExpandedTextWidget(
+                  text: hotelList[hotelIndex]["detail"],
+                ),
               ),
               const Padding(
                 padding: EdgeInsets.all(16),
@@ -126,43 +133,37 @@ class _HotelDetailsPageState extends State<HotelDetailsPage> {
   }
 }
 
-class ExpandedTextWidget extends StatefulWidget {
+class ExpandedTextWidget extends StatelessWidget {
   final String text;
-  const ExpandedTextWidget({super.key, required this.text});
+  ExpandedTextWidget({super.key, required this.text});
 
-  @override
-  State<ExpandedTextWidget> createState() => _ExpandedTextWidgetState();
-}
-
-class _ExpandedTextWidgetState extends State<ExpandedTextWidget> {
-  bool isExpanded = false;
-  void toggleExpansion() {
-    setState(() {
-      isExpanded = !isExpanded;
-    });
-  }
+  final controller = Get.put(ToggleController());
 
   @override
   Widget build(BuildContext context) {
-    var textWidget = Text(
-      widget.text,
-      maxLines: isExpanded ? null : 3,
-      overflow: isExpanded ? TextOverflow.visible : TextOverflow.ellipsis,
-    );
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        textWidget,
-        GestureDetector(
-          onTap: () {
-            toggleExpansion();
-          },
-          child: Text(
-            isExpanded ? "Less" : "More",
-            style: AppStyle.textStyle.copyWith(color: AppStyle.primary),
+    return Obx(() {
+      var textWidget = Text(
+        text,
+        maxLines: controller.isExpanded.value ? null : 3,
+        overflow: controller.isExpanded.value
+            ? TextOverflow.visible
+            : TextOverflow.ellipsis,
+      );
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          textWidget,
+          GestureDetector(
+            onTap: () {
+              controller.toggleExpansion();
+            },
+            child: Text(
+              controller.isExpanded.value ? "Less" : "More",
+              style: AppStyle.textStyle.copyWith(color: AppStyle.primary),
+            ),
           ),
-        ),
-      ],
-    );
+        ],
+      );
+    });
   }
 }
