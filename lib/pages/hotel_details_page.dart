@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:get/get.dart';
-import 'package:ticket_app/controller/toggle_controller.dart';
+import 'package:ticket_app/bloc/toggle_text/toggle_text_bloc.dart';
 import 'package:ticket_app/core/res/styles/app_style.dart';
 import 'package:ticket_app/core/utils/all_json.dart';
 import 'package:ticket_app/provider/toggle_provider.dart';
@@ -130,33 +130,41 @@ class _HotelDetailsPageState extends State<HotelDetailsPage> {
   }
 }
 
-class ExpandedTextWidget extends ConsumerWidget {
+class ExpandedTextWidget extends StatelessWidget {
   final String text;
   const ExpandedTextWidget({super.key, required this.text});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    var isExpanded = ref.watch(toggleProviderProvider);
+  Widget build(BuildContext context) {
+    return BlocBuilder<ToggleTextBloc, ToggleTextState>(
+      builder: (context, state) {
+        if (state is ToggleSucces) {
+          var isExpanded = state.isExpanded;
 
-    var textWidget = Text(
-      text,
-      maxLines: isExpanded ? null : 3,
-      overflow: isExpanded ? TextOverflow.visible : TextOverflow.ellipsis,
-    );
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        textWidget,
-        GestureDetector(
-          onTap: () {
-            ref.watch(toggleProviderProvider.notifier).toggleExpansion(isExpanded);
-          },
-          child: Text(
-            isExpanded ? "Less" : "More",
-            style: AppStyle.textStyle.copyWith(color: AppStyle.primary),
-          ),
-        ),
-      ],
+          var textWidget = Text(
+            text,
+            maxLines: isExpanded ? null : 3,
+            overflow: isExpanded ? TextOverflow.visible : TextOverflow.ellipsis,
+          );
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              textWidget,
+              GestureDetector(
+                onTap: () {
+                  context.read<ToggleTextBloc>().add(ToggleExpanded(!isExpanded));
+                },
+                child: Text(
+                  isExpanded ? "Less" : "More",
+                  style: AppStyle.textStyle.copyWith(color: AppStyle.primary),
+                ),
+              ),
+            ],
+          );
+        } else {
+          return Container();
+        }
+      },
     );
   }
 }
