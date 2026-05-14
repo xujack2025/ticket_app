@@ -30,12 +30,12 @@ class TicketView extends StatelessWidget {
           children: [
             /// Ticket Upper Side
             Container(
-              padding: EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
                 color: isColor == null
                     ? AppStyle.ticketUpper
                     : AppStyle.ticketBgColor,
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(21),
                   topRight: Radius.circular(21),
                 ),
@@ -85,7 +85,7 @@ class TicketView extends StatelessWidget {
                   ),
 
                   /// Show departure and destination with names and time
-                  SizedBox(height: 3),
+                  const SizedBox(height: 3),
                   Row(
                     children: [
                       SizedBox(
@@ -120,17 +120,17 @@ class TicketView extends StatelessWidget {
 
             /// Tickect Bottom Side
             Container(
-              padding: EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
                 color: isColor == null
                     ? AppStyle.ticketBottom
                     : AppStyle.ticketBgColor,
                 borderRadius: isColor == null
-                    ? BorderRadius.only(
+                    ? const BorderRadius.only(
                         bottomLeft: Radius.circular(21),
                         bottomRight: Radius.circular(21),
                       )
-                    : BorderRadius.all(Radius.zero),
+                    : const BorderRadius.all(Radius.zero),
               ),
               child: Column(
                 children: [

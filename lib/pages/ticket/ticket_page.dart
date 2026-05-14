@@ -21,10 +21,8 @@ class _TicketPageState extends State<TicketPage> {
 
   @override
   void didChangeDependencies() {
-    // TODO: implement didChangeDependencies
     if (ModalRoute.of(context)!.settings.arguments != null) {
       var args = ModalRoute.of(context)!.settings.arguments as Map;
-      debugPrint("passed index ${args["index"]}");
       ticketIndex = args["index"];
     }
     super.didChangeDependencies();
@@ -42,15 +40,15 @@ class _TicketPageState extends State<TicketPage> {
       body: Stack(
         children: [
           ListView(
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             children: [
               // SizedBox(height: 20),
-              AppTicketTabs(firstTab: 'Upcoming', secondTab: 'Previous'),
+              const AppTicketTabs(firstTab: 'Upcoming', secondTab: 'Previous'),
 
               /// Ticket Details Infomation Part 1
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Container(
-                padding: EdgeInsets.only(left: 16),
+                padding: const EdgeInsets.only(left: 16),
                 child: TicketView(
                   ticket: ticketList[ticketIndex],
                   isColor: true,
@@ -58,14 +56,17 @@ class _TicketPageState extends State<TicketPage> {
               ),
 
               /// Ticket Details Infomation Part 2
-              SizedBox(height: 1),
+              const SizedBox(height: 1),
               Container(
-                margin: EdgeInsets.symmetric(horizontal: 16),
-                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+                margin: const EdgeInsets.symmetric(horizontal: 16),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 15,
+                  vertical: 20,
+                ),
                 color: AppStyle.ticketBgColor,
                 child: Column(
                   children: [
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         AppColumnTextLayout(
@@ -82,14 +83,14 @@ class _TicketPageState extends State<TicketPage> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 20),
-                    AppLayoutbuilderWidget(
+                    const SizedBox(height: 20),
+                    const AppLayoutbuilderWidget(
                       randomDivider: 15,
                       width: 5,
                       isColor: false,
                     ),
-                    SizedBox(height: 20),
-                    Row(
+                    const SizedBox(height: 20),
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         AppColumnTextLayout(
@@ -106,13 +107,13 @@ class _TicketPageState extends State<TicketPage> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 20),
-                    AppLayoutbuilderWidget(
+                    const SizedBox(height: 20),
+                    const AppLayoutbuilderWidget(
                       randomDivider: 15,
                       width: 5,
                       isColor: false,
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -122,20 +123,20 @@ class _TicketPageState extends State<TicketPage> {
                             Row(
                               children: [
                                 Image.network(AppMedia.visaLogo, scale: 75),
-                                Text(
+                                const Text(
                                   " **** 2683",
                                   style: AppStyle.headLineStyle3,
                                 ),
                               ],
                             ),
-                            SizedBox(height: 5),
+                            const SizedBox(height: 5),
                             Text(
                               "Payment Method",
                               style: AppStyle.headLineStyle4,
                             ),
                           ],
                         ),
-                        AppColumnTextLayout(
+                        const AppColumnTextLayout(
                           topText: "\$299.99",
                           bottomText: "Price",
                           alignment: CrossAxisAlignment.end,
@@ -148,10 +149,10 @@ class _TicketPageState extends State<TicketPage> {
               ),
 
               /// Ticket Details QR
-              SizedBox(height: 1),
+              const SizedBox(height: 1),
               Container(
-                margin: EdgeInsets.symmetric(horizontal: 16),
-                decoration: BoxDecoration(
+                margin: const EdgeInsets.symmetric(horizontal: 16),
+                decoration: const BoxDecoration(
                   color: AppStyle.ticketBgColor,
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(12),
@@ -159,7 +160,10 @@ class _TicketPageState extends State<TicketPage> {
                   ),
                 ),
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 20,
+                  ),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(15),
                     child: BarcodeWidget(
@@ -175,15 +179,15 @@ class _TicketPageState extends State<TicketPage> {
               ),
 
               /// Ticket Summary View
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Container(
-                padding: EdgeInsets.only(left: 16),
+                padding: const EdgeInsets.only(left: 16),
                 child: TicketView(ticket: ticketList[ticketIndex]),
               ),
             ],
           ),
-          TicketPositionedCircle(pos: true),
-          TicketPositionedCircle(),
+          const TicketPositionedCircle(pos: true),
+          const TicketPositionedCircle(),
           // TicketPositionedCircle(pos: null),
         ],
       ),

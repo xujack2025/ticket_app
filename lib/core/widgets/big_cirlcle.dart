@@ -19,20 +19,20 @@ class BigCirlcle extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               HalfCircle(
-                side: BorderRadius.only(topRight: Radius.circular(10)),
+                side: const BorderRadius.only(topRight: Radius.circular(10)),
                 isColor: isColor,
               ),
               HalfCircle(
-                side: BorderRadius.only(topLeft: Radius.circular(10)),
+                side: const BorderRadius.only(topLeft: Radius.circular(10)),
                 isColor: isColor,
               ),
             ],
           ),
         ),
         Container(
-          margin: EdgeInsets.symmetric(horizontal: 10),
+          margin: const EdgeInsets.symmetric(horizontal: 10),
           color: isColor == null ? AppStyle.ticketUpper : Colors.grey.shade200,
-          child: AppLayoutbuilderWidget(randomDivider: 16, width: 6),
+          child: const AppLayoutbuilderWidget(randomDivider: 16, width: 6),
         ),
         Container(
           color: isColor == null
@@ -41,12 +41,12 @@ class BigCirlcle extends StatelessWidget {
           child: Row(
             children: [
               HalfCircle(
-                side: BorderRadius.only(bottomRight: Radius.circular(10)),
+                side: const BorderRadius.only(bottomRight: Radius.circular(10)),
                 isColor: isColor,
               ),
               Expanded(child: Container()),
               HalfCircle(
-                side: BorderRadius.only(bottomLeft: Radius.circular(10)),
+                side: const BorderRadius.only(bottomLeft: Radius.circular(10)),
                 isColor: isColor,
               ),
             ],

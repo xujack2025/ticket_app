@@ -14,20 +14,22 @@ class AppStyle {
   static const Color ticketBgColor = Colors.white;
   static const Color dotColor = Color(0xFF8ACCF7);
   static const Color planeSecondColor = Color(0xFF8ACCF7);
+  static const Color red = Colors.red;
+  static const Color white = Colors.white;
 
-  static TextStyle textStyle = TextStyle(
+  static TextStyle textStyle = const TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w500,
     color: textColor,
   );
 
-  static TextStyle headLineStyle1 = TextStyle(
+  static TextStyle headLineStyle1 = const TextStyle(
     fontSize: 26,
     fontWeight: FontWeight.bold,
     color: textColor,
   );
 
-  static TextStyle headLineStyle2 = TextStyle(
+  static TextStyle headLineStyle2 = const TextStyle(
     fontSize: 21,
     fontWeight: FontWeight.bold,
     color: textColor,

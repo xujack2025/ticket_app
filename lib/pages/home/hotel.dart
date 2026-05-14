@@ -15,7 +15,7 @@ class Hotel extends StatelessWidget {
       width: size.width * 0.6,
       height: 350,
       margin: EdgeInsets.only(right: wholeScreen == true ? 0 : 16),
-      padding: EdgeInsets.all(8),
+      padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
         color: AppStyle.primary,
         borderRadius: BorderRadius.circular(18),
@@ -34,7 +34,7 @@ class Hotel extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Padding(
             padding: const EdgeInsets.only(left: 15),
             child: Text(
@@ -42,7 +42,7 @@ class Hotel extends StatelessWidget {
               style: AppStyle.headLineStyle1.copyWith(color: Colors.white),
             ),
           ),
-          SizedBox(height: 5),
+          const SizedBox(height: 5),
           Padding(
             padding: const EdgeInsets.only(left: 15),
             child: Text(
@@ -52,7 +52,7 @@ class Hotel extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 5),
+          const SizedBox(height: 5),
           Padding(
             padding: const EdgeInsets.only(left: 15),
             child: Text(

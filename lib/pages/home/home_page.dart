@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
         children: [
           Container(
             // color: Colors.blue,
-            padding: EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               children: [
                 Row(
@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("Good Morning", style: AppStyle.headLineStyle3),
+                        const Text("Good Morning", style: AppStyle.headLineStyle3),
                         const SizedBox(height: 5),
                         Text("Book Tickets", style: AppStyle.headLineStyle1),
                       ],
@@ -43,9 +43,7 @@ class _HomePageState extends State<HomePage> {
                       height: 50,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        image: DecorationImage(
-                          image: NetworkImage(AppMedia.logo),
-                        ),
+                        image: const DecorationImage(image: NetworkImage(AppMedia.logo)),
                       ),
                     ),
                   ],
@@ -53,12 +51,12 @@ class _HomePageState extends State<HomePage> {
 
                 const SizedBox(height: 25),
                 Container(
-                  padding: EdgeInsets.all(12),
+                  padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.white,
                   ),
-                  child: Row(
+                  child: const Row(
                     children: [
                       Icon(
                         FluentSystemIcons.ic_fluent_search_regular,
@@ -73,8 +71,7 @@ class _HomePageState extends State<HomePage> {
                 AppDoubleText(
                   title: 'Upcoming Flights',
                   linkText: 'View all',
-                  function: () =>
-                      Navigator.pushNamed(context, AppRoutes.allTicketsPage),
+                  function: () => Navigator.pushNamed(context, AppRoutes.allTicketsPage),
                 ),
 
                 const SizedBox(height: 20),
@@ -82,7 +79,17 @@ class _HomePageState extends State<HomePage> {
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: ticketList.take(2).map((singleTicket) {
-                      return TicketView(ticket: singleTicket);
+                      return GestureDetector(
+                        onTap: () {
+                          var index = ticketList.indexOf(singleTicket);
+                          Navigator.pushNamed(
+                            context,
+                            AppRoutes.ticketPage,
+                            arguments: {"index": index},
+                          );
+                        },
+                        child: TicketView(ticket: singleTicket),
+                      );
                     }).toList(),
                   ),
                 ),
@@ -91,8 +98,7 @@ class _HomePageState extends State<HomePage> {
                 AppDoubleText(
                   title: 'Hotels',
                   linkText: 'View all',
-                  function: () =>
-                      Navigator.pushNamed(context, AppRoutes.allHotelsPage),
+                  function: () => Navigator.pushNamed(context, AppRoutes.allHotelsPage),
                 ),
 
                 const SizedBox(height: 20),
@@ -100,7 +106,17 @@ class _HomePageState extends State<HomePage> {
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: hotelList.take(2).map((singleHotel) {
-                      return Hotel(hotel: singleHotel);
+                      return GestureDetector(
+                        onTap: () {
+                          var index = hotelList.indexOf(singleHotel);
+                          Navigator.pushNamed(
+                            context,
+                            AppRoutes.hotelDetailsPage,
+                            arguments: {"index": index},
+                          );
+                        },
+                        child: Hotel(hotel: singleHotel),
+                      );
                     }).toList(),
                   ),
                 ),

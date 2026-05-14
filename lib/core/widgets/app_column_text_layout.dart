@@ -22,7 +22,7 @@ class AppColumnTextLayout extends StatelessWidget {
       crossAxisAlignment: alignment,
       children: [
         CustomTextStyleThird(text: topText, isColor: isColor),
-        SizedBox(height: 5),
+        const SizedBox(height: 5),
         CustomTextStyleFourth(text: bottomText, isColor: isColor),
       ],
     );

@@ -11,36 +11,27 @@ class AllTicketsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppStyle.bgColor,
-      appBar: AppBar(
-        title: Text("All Tickets"),
-        backgroundColor: AppStyle.bgColor,
-      ),
+      appBar: AppBar(title: const Text("All Tickets"), backgroundColor: AppStyle.bgColor),
       body: ListView(
         children: [
           SingleChildScrollView(
             child: Column(
-              children: ticketList
-                  .map(
-                    (singleTicket) => GestureDetector(
-                      onTap: () {
-                        var index = ticketList.indexOf(singleTicket);
-                        debugPrint("im tapped on ticket $index");
-                        Navigator.pushNamed(
-                          context,
-                          AppRoutes.ticketPage,
-                          arguments: {"index": index},
-                        );
-                      },
-                      child: Container(
-                        margin: EdgeInsets.only(bottom: 20),
-                        child: TicketView(
-                          ticket: singleTicket,
-                          wholeScreen: true,
-                        ),
-                      ),
-                    ),
-                  )
-                  .toList(),
+              children: ticketList.map((singleTicket) {
+                return GestureDetector(
+                  onTap: () {
+                    var index = ticketList.indexOf(singleTicket);
+                    Navigator.pushNamed(
+                      context,
+                      AppRoutes.ticketPage,
+                      arguments: {"index": index},
+                    );
+                  },
+                  child: Container(
+                    margin: const EdgeInsets.only(bottom: 20),
+                    child: TicketView(ticket: singleTicket, wholeScreen: true),
+                  ),
+                );
+              }).toList(),
             ),
           ),
         ],

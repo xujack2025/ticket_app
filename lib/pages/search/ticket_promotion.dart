@@ -13,7 +13,7 @@ class TicketPromotion extends StatelessWidget {
       children: [
         Container(
           width: size.width * .42,
-          padding: EdgeInsets.all(15),
+          padding: const EdgeInsets.all(15),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
             color: Colors.white,
@@ -31,13 +31,13 @@ class TicketPromotion extends StatelessWidget {
                 height: 190,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
-                  image: DecorationImage(
+                  image: const DecorationImage(
                     fit: BoxFit.cover,
                     image: AssetImage(AppMedia.hotelRoom),
                   ),
                 ),
               ),
-              SizedBox(height: 12),
+              const SizedBox(height: 12),
               Text(
                 "20% discount on the early booling of this flight. Don't miss it!",
                 style: AppStyle.headLineStyle2,
@@ -50,12 +50,12 @@ class TicketPromotion extends StatelessWidget {
             Stack(
               children: [
                 Container(
-                  padding: EdgeInsets.all(15),
+                  padding: const EdgeInsets.all(15),
                   width: size.width * .44,
                   height: 210,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(18),
-                    color: Color(0xFF3AB8B8),
+                    color: const Color(0xFF3AB8B8),
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -67,7 +67,7 @@ class TicketPromotion extends StatelessWidget {
                           color: Colors.white,
                         ),
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       Text(
                         "Take the suervey about our services and get the discount",
                         style: AppStyle.headLineStyle2.copyWith(
@@ -83,7 +83,7 @@ class TicketPromotion extends StatelessWidget {
                   right: -45,
                   top: -40,
                   child: Container(
-                    padding: EdgeInsets.all(30),
+                    padding: const EdgeInsets.all(30),
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       border: Border.all(
@@ -95,14 +95,14 @@ class TicketPromotion extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Container(
-              padding: EdgeInsets.all(15),
+              padding: const EdgeInsets.all(15),
               width: size.width * 0.44,
               height: 210,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(18),
-                color: Color(0xFFEC6545),
+                color: const Color(0xFFEC6545),
               ),
               child: Column(
                 children: [
@@ -112,7 +112,7 @@ class TicketPromotion extends StatelessWidget {
                       color: Colors.white,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: double.infinity,
                     height: 100,
                     child: Stack(
