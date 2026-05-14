@@ -31,11 +31,11 @@ class _HomePageState extends State<HomePage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Column(
+                    const Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text("Good Morning", style: AppStyle.headLineStyle3),
-                        const SizedBox(height: 5),
+                        Text("Good Morning", style: AppStyle.headLineStyle3),
+                        SizedBox(height: 5),
                         HeadingText(text: "Book Tickets", isColor: true),
                       ],
                     ),

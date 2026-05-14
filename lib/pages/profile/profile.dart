@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:ticket_app/core/res/app_media.dart';
 import 'package:ticket_app/core/res/styles/app_style.dart';
 import 'package:ticket_app/core/widgets/app_column_text_layout.dart';
-import 'package:ticket_app/core/widgets/custom_text_style_fourth.dart';
 import 'package:ticket_app/core/widgets/custom_text_style_third.dart';
 import 'package:ticket_app/core/widgets/heading_text.dart';
 
@@ -33,11 +32,11 @@ class Profile extends StatelessWidget {
               ),
 
               /// show columns text
-              SizedBox(width: 10),
+              const SizedBox(width: 10),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  HeadingText(text: "Book Tickets", isColor: true),
+                  const HeadingText(text: "Book Tickets", isColor: true),
                   Text(
                     "New-York",
                     style: TextStyle(
@@ -46,9 +45,9 @@ class Profile extends StatelessWidget {
                       color: Colors.grey.shade500,
                     ),
                   ),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 3, vertical: 3),
+                    padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 3),
                     decoration: BoxDecoration(
                       color: AppStyle.profileBadgeColor,
                       borderRadius: BorderRadius.circular(100),
@@ -56,19 +55,19 @@ class Profile extends StatelessWidget {
                     child: Row(
                       children: [
                         Container(
-                          padding: EdgeInsets.all(3),
-                          decoration: BoxDecoration(
+                          padding: const EdgeInsets.all(3),
+                          decoration: const BoxDecoration(
                             shape: BoxShape.circle,
                             color: AppStyle.profileTextColor,
                           ),
-                          child: Icon(
+                          child: const Icon(
                             FluentSystemIcons.ic_fluent_shield_filled,
                             color: Colors.white,
                             size: 15,
                           ),
                         ),
-                        SizedBox(width: 5),
-                        Text(
+                        const SizedBox(width: 5),
+                        const Text(
                           "Premium Status",
                           style: TextStyle(
                             color: AppStyle.profileTextColor,
@@ -81,7 +80,7 @@ class Profile extends StatelessWidget {
                 ],
               ),
               Expanded(child: Container()),
-              Text(
+              const Text(
                 "Edit",
                 style: TextStyle(color: AppStyle.primary, fontWeight: FontWeight.bold),
               ),
@@ -89,11 +88,11 @@ class Profile extends StatelessWidget {
           ),
 
           /// Divider
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           Divider(color: Colors.grey.shade300),
 
           /// Award Banner
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           Stack(
             children: [
               Container(
@@ -108,7 +107,7 @@ class Profile extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 20),
                 child: Row(
                   children: [
-                    CircleAvatar(
+                    const CircleAvatar(
                       maxRadius: 25,
                       backgroundColor: Colors.white,
                       child: Icon(
@@ -117,11 +116,11 @@ class Profile extends StatelessWidget {
                         size: 27,
                       ),
                     ),
-                    SizedBox(width: 12),
+                    const SizedBox(width: 12),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        CustomTextStyleThird(text: "You got a new award"),
+                        const CustomTextStyleThird(text: "You got a new award"),
                         Text(
                           "You have 95 flights in a year",
                           style: TextStyle(
@@ -138,10 +137,10 @@ class Profile extends StatelessWidget {
                 top: -40,
                 right: -45,
                 child: Container(
-                  padding: EdgeInsets.all(30),
+                  padding: const EdgeInsets.all(30),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    border: Border.all(width: 18, color: Color(0xFF264CD2)),
+                    border: Border.all(width: 18, color: const Color(0xFF264CD2)),
                   ),
                 ),
               ),
@@ -149,18 +148,18 @@ class Profile extends StatelessWidget {
           ),
 
           /// Show Miles
-          SizedBox(height: 24),
+          const SizedBox(height: 24),
           Text("Accumulated Miles", style: AppStyle.headLineStyle2),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 16),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(18),
               color: AppStyle.bgColor,
             ),
             child: Column(
               children: [
-                SizedBox(height: 16),
-                Text(
+                const SizedBox(height: 16),
+                const Text(
                   "192802",
                   style: TextStyle(
                     fontSize: 45,
@@ -168,7 +167,7 @@ class Profile extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -183,11 +182,11 @@ class Profile extends StatelessWidget {
                   ],
                 ),
                 // Divider
-                SizedBox(height: 4),
+                const SizedBox(height: 4),
                 Divider(color: Colors.grey.shade300),
-                SizedBox(height: 4),
+                const SizedBox(height: 4),
 
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     AppColumnTextLayout(
@@ -205,10 +204,10 @@ class Profile extends StatelessWidget {
                 ),
 
                 // Divider
-                SizedBox(height: 4),
+                const SizedBox(height: 4),
                 Divider(color: Colors.grey.shade300),
-                SizedBox(height: 4),
-                Row(
+                const SizedBox(height: 4),
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     AppColumnTextLayout(
@@ -226,10 +225,10 @@ class Profile extends StatelessWidget {
                 ),
 
                 // Divider
-                SizedBox(height: 4),
+                const SizedBox(height: 4),
                 Divider(color: Colors.grey.shade300),
-                SizedBox(height: 4),
-                Row(
+                const SizedBox(height: 4),
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     AppColumnTextLayout(
@@ -246,7 +245,7 @@ class Profile extends StatelessWidget {
                   ],
                 ),
 
-                SizedBox(height: 25),
+                const SizedBox(height: 25),
                 InkWell(
                   onTap: () {
                     //TODO
