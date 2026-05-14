@@ -12,7 +12,9 @@ class BigCirlcle extends StatelessWidget {
     return Column(
       children: [
         Container(
-          color: isColor == null ? AppStyle.ticketUpper : AppStyle.ticketBgColor,
+          color: isColor == null
+              ? AppStyle.ticketUpper
+              : AppStyle.ticketBgColor,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -33,7 +35,9 @@ class BigCirlcle extends StatelessWidget {
           child: AppLayoutbuilderWidget(randomDivider: 16, width: 6),
         ),
         Container(
-          color: isColor == null ? AppStyle.ticketBottom : AppStyle.ticketBgColor,
+          color: isColor == null
+              ? AppStyle.ticketBottom
+              : AppStyle.ticketBgColor,
           child: Row(
             children: [
               HalfCircle(
@@ -66,7 +70,7 @@ class HalfCircle extends StatelessWidget {
       width: 10,
       child: DecoratedBox(
         decoration: BoxDecoration(
-          color: isColor == null ? AppStyle.bgColor : AppStyle.ticketBgColor,
+          color: isColor == null ? AppStyle.bgColor : AppStyle.bgColor,
           borderRadius: side,
         ),
       ),

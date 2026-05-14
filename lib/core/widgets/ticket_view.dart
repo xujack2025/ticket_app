@@ -32,7 +32,9 @@ class TicketView extends StatelessWidget {
             Container(
               padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: isColor == null ? AppStyle.ticketUpper : AppStyle.ticketBgColor,
+                color: isColor == null
+                    ? AppStyle.ticketUpper
+                    : AppStyle.ticketBgColor,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(21),
                   topRight: Radius.circular(21),
@@ -75,7 +77,10 @@ class TicketView extends StatelessWidget {
                       ),
                       BigDot(isColor: isColor),
                       Expanded(child: Container()),
-                      CustomTextStyleThird(text: ticket["to"]["code"], isColor: isColor),
+                      CustomTextStyleThird(
+                        text: ticket["to"]["code"],
+                        isColor: isColor,
+                      ),
                     ],
                   ),
 
@@ -117,7 +122,9 @@ class TicketView extends StatelessWidget {
             Container(
               padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: isColor == null ? AppStyle.ticketBottom : AppStyle.ticketBgColor,
+                color: isColor == null
+                    ? AppStyle.ticketBottom
+                    : AppStyle.ticketBgColor,
                 borderRadius: isColor == null
                     ? BorderRadius.only(
                         bottomLeft: Radius.circular(21),

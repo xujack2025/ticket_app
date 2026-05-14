@@ -43,7 +43,9 @@ class _HomePageState extends State<HomePage> {
                       height: 50,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        image: DecorationImage(image: NetworkImage(AppMedia.logo)),
+                        image: DecorationImage(
+                          image: NetworkImage(AppMedia.logo),
+                        ),
                       ),
                     ),
                   ],
@@ -71,7 +73,8 @@ class _HomePageState extends State<HomePage> {
                 AppDoubleText(
                   title: 'Upcoming Flights',
                   linkText: 'View all',
-                  function: () => Navigator.pushNamed(context, AppRoutes.allTicketsPage),
+                  function: () =>
+                      Navigator.pushNamed(context, AppRoutes.allTicketsPage),
                 ),
 
                 const SizedBox(height: 20),
@@ -88,7 +91,8 @@ class _HomePageState extends State<HomePage> {
                 AppDoubleText(
                   title: 'Hotels',
                   linkText: 'View all',
-                  function: () => Navigator.pushNamed(context, AppRoutes.allHotelsPage),
+                  function: () =>
+                      Navigator.pushNamed(context, AppRoutes.allHotelsPage),
                 ),
 
                 const SizedBox(height: 20),
@@ -96,7 +100,7 @@ class _HomePageState extends State<HomePage> {
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: hotelList.take(2).map((singleHotel) {
-                      return HotelView(hotel: singleHotel);
+                      return Hotel(hotel: singleHotel);
                     }).toList(),
                   ),
                 ),

@@ -18,7 +18,11 @@ class TicketPromotion extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
             color: Colors.white,
             boxShadow: [
-              BoxShadow(color: Colors.grey.shade200, blurRadius: 1, spreadRadius: 2),
+              BoxShadow(
+                color: Colors.grey.shade200,
+                blurRadius: 1,
+                spreadRadius: 2,
+              ),
             ],
           ),
           child: Column(
@@ -82,7 +86,10 @@ class TicketPromotion extends StatelessWidget {
                     padding: EdgeInsets.all(30),
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      border: Border.all(width: 18, color: AppStyle.circleColor),
+                      border: Border.all(
+                        width: 18,
+                        color: AppStyle.circleColor,
+                      ),
                     ),
                   ),
                 ),
@@ -101,7 +108,9 @@ class TicketPromotion extends StatelessWidget {
                 children: [
                   Text(
                     "Take Love",
-                    style: AppStyle.headLineStyle2.copyWith(color: Colors.white),
+                    style: AppStyle.headLineStyle2.copyWith(
+                      color: Colors.white,
+                    ),
                   ),
                   SizedBox(
                     width: double.infinity,

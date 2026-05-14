@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:ticket_app/core/bottom_nav_bar.dart';
-import 'package:ticket_app/pages/all_hotels_page.dart';
+import 'package:ticket_app/core/utils/app_routes.dart';
+import 'package:ticket_app/pages/home/all_hotels_page.dart';
 import 'package:ticket_app/pages/home/all_tickets_page.dart';
+import 'package:ticket_app/pages/ticket/ticket_page.dart';
 
 void main() {
   runApp(const MainApp());
@@ -15,9 +17,10 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        "/": (context) => const BottomNavBar(),
-        "/all_tickets_page": (context) => const AllTicketsPage(),
-        "/all_hotels_page": (context) => const AllHotelsPage(),
+        AppRoutes.homePage: (context) => const BottomNavBar(),
+        AppRoutes.allTicketsPage: (context) => const AllTicketsPage(),
+        AppRoutes.ticketPage: (context) => TicketPage(),
+        AppRoutes.allHotelsPage: (context) => const AllHotelsPage(),
       },
     );
   }

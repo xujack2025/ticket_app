@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ticket_app/core/res/app_media.dart';
 import 'package:ticket_app/core/res/styles/app_style.dart';
 import 'package:ticket_app/core/utils/app_routes.dart';
 import 'package:ticket_app/core/widgets/app_double_text.dart';
@@ -13,7 +12,6 @@ class SearchPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: AppStyle.bgColor,
       body: ListView(
@@ -25,9 +23,12 @@ class SearchPage extends StatelessWidget {
             style: AppStyle.headLineStyle1.copyWith(fontSize: 35),
           ),
           SizedBox(height: 20),
-          AppTicketTabs(firstTab: 'All Tickets', secondTab: 'Hotels',),
+          AppTicketTabs(firstTab: 'All Tickets', secondTab: 'Hotels'),
           SizedBox(height: 25),
-          const AppTextIcon(icon: Icons.flight_takeoff_rounded, text: 'Departure'),
+          const AppTextIcon(
+            icon: Icons.flight_takeoff_rounded,
+            text: 'Departure',
+          ),
           SizedBox(height: 20),
           const AppTextIcon(icon: Icons.flight_land_rounded, text: 'Arrival'),
           SizedBox(height: 25),
@@ -36,7 +37,8 @@ class SearchPage extends StatelessWidget {
           AppDoubleText(
             title: 'Upcoming Flights',
             linkText: 'View all',
-            function: () => Navigator.pushNamed(context, AppRoutes.allTicketsPage),
+            function: () =>
+                Navigator.pushNamed(context, AppRoutes.allTicketsPage),
           ),
           SizedBox(height: 15),
           TicketPromotion(),

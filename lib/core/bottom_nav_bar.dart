@@ -19,7 +19,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     Center(child: Text("Profile")),
   ];
 
-  int _selectedIndex = 2;
+  int _selectedIndex = 0;
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;

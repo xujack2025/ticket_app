@@ -4,7 +4,11 @@ import 'package:ticket_app/core/res/styles/app_style.dart';
 class AppTicketTabs extends StatelessWidget {
   final String firstTab;
   final String secondTab;
-  const AppTicketTabs({super.key, required this.firstTab, required this.secondTab});
+  const AppTicketTabs({
+    super.key,
+    required this.firstTab,
+    required this.secondTab,
+  });
 
   @override
   Widget build(BuildContext context) {

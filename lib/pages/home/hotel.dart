@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:ticket_app/core/res/styles/app_style.dart';
 
-class HotelView extends StatelessWidget {
+class Hotel extends StatelessWidget {
   final bool wholeScreen;
   final Map<String, dynamic> hotel;
 
-  const HotelView({super.key, this.wholeScreen = false, required this.hotel});
+  const Hotel({super.key, this.wholeScreen = false, required this.hotel});
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +47,9 @@ class HotelView extends StatelessWidget {
             padding: const EdgeInsets.only(left: 15),
             child: Text(
               hotel["destination"],
-              style: AppStyle.headLineStyle3.copyWith(color: AppStyle.khakiColor),
+              style: AppStyle.headLineStyle3.copyWith(
+                color: AppStyle.khakiColor,
+              ),
             ),
           ),
           SizedBox(height: 5),

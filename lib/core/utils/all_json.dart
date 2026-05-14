@@ -90,7 +90,22 @@ List<Map<String, dynamic>> ticketList = [
 ];
 
 List<Map<String, dynamic>> hotelList = [
-  {'image': 'hotel_room.png', 'place': 'Open Space', 'destination': 'London', 'price': '25'},
-  {'image': 'hotel_room.png', 'place': 'Open Space', 'destination': 'London', 'price': '25'},
-  {'image': 'hotel_room.png', 'place': 'Open Space', 'destination': 'London', 'price': '25'},
+  {
+    'image': 'hotel_room.png',
+    'place': 'Open Space',
+    'destination': 'London',
+    'price': '25',
+  },
+  {
+    'image': 'hotel_room.png',
+    'place': 'Open Space',
+    'destination': 'London',
+    'price': '25',
+  },
+  {
+    'image': 'hotel_room.png',
+    'place': 'Open Space',
+    'destination': 'London',
+    'price': '25',
+  },
 ];
